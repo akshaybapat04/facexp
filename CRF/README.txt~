@@ -1,0 +1,30 @@
+Conditional Random Fields for pairwise networks.
+Code written by Kevin Murphy (murphyk@ai.mit.edu) 2004
+
+Try 'testCRF'  to get started.
+
+This requires netlab and my BPMRF2 (belief propagation for pairwise
+MRFs) code. This is exact for chains but approximate for loopy graphs.
+
+Two kinds of CRF structures are supported:
+
+- crfchain for 1D chains
+
+- crf for general graphs (including 2D lattices)
+
+Note that netlab requires that certain function names start with lower
+case, e.g., crferr not crfErr (since it uses feval and matlab 7
+enforces strict case sensitivity).
+
+
+The potentials are defined  as follows
+
+For hidden edge e=i-j:
+   psi{e}(qi,qj) is a table.
+
+For local evidence
+  phi{i}(qi) = exp[ sum_d w{i}(d,qi) f{i}(d) ]
+
+where f{i}(:) is the feature vector for node i
+and w{i}(:, :) is the weight matrix relating this feature vector to
+the states qi.

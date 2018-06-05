@@ -1,0 +1,8 @@
+folders = {'CRF', 'BPMRF2', 'HMM', 'KPMtools', 'KPMstats', 'graph', ...
+	  'Foreign/netlab/netlab3.3'};
+
+
+Base = 'C:\kmurphy\matlab';
+for f=1:length(folders)
+  addpath(fullfile(Base, folders{f}))
+end
